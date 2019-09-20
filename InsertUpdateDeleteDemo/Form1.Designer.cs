@@ -30,6 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.technologyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Country = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblnpsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.operationsDataSet = new NetPromoterScore.OperationsDataSet();
             this.npstableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testsqlDataSet = new NetPromoterScore.testsqlDataSet();
             this.nps_tableTableAdapter = new NetPromoterScore.testsqlDataSetTableAdapters.nps_tableTableAdapter();
@@ -54,23 +63,15 @@
             this.testsqlDataSet1 = new NetPromoterScore.testsqlDataSet1();
             this.npstableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.nps_tableTableAdapter1 = new NetPromoterScore.testsqlDataSet1TableAdapters.nps_tableTableAdapter();
-            this.operationsDataSet = new NetPromoterScore.OperationsDataSet();
-            this.tblnpsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_npsTableAdapter = new NetPromoterScore.OperationsDataSetTableAdapters.tbl_npsTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.technologyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Country = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblnpsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.operationsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npstableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testsqlDataSet)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testsqlDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.npstableBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.operationsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblnpsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -80,16 +81,69 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.customerDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn2,
             this.technologyDataGridViewTextBoxColumn,
             this.scoreDataGridViewTextBoxColumn,
             this.commentDataGridViewTextBoxColumn,
             this.Country});
             this.dataGridView1.DataSource = this.tblnpsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(89, 213);
+            this.dataGridView1.Location = new System.Drawing.Point(46, 211);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(628, 225);
+            this.dataGridView1.Size = new System.Drawing.Size(742, 225);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Ticket number";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Ticket number";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // customerDataGridViewTextBoxColumn
+            // 
+            this.customerDataGridViewTextBoxColumn.DataPropertyName = "Customer";
+            this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
+            this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Date of call";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Date of call";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // technologyDataGridViewTextBoxColumn
+            // 
+            this.technologyDataGridViewTextBoxColumn.DataPropertyName = "Technology";
+            this.technologyDataGridViewTextBoxColumn.HeaderText = "Technology";
+            this.technologyDataGridViewTextBoxColumn.Name = "technologyDataGridViewTextBoxColumn";
+            // 
+            // scoreDataGridViewTextBoxColumn
+            // 
+            this.scoreDataGridViewTextBoxColumn.DataPropertyName = "Score";
+            this.scoreDataGridViewTextBoxColumn.HeaderText = "Score";
+            this.scoreDataGridViewTextBoxColumn.Name = "scoreDataGridViewTextBoxColumn";
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            // 
+            // Country
+            // 
+            this.Country.DataPropertyName = "Country";
+            this.Country.HeaderText = "Country";
+            this.Country.Name = "Country";
+            // 
+            // tblnpsBindingSource
+            // 
+            this.tblnpsBindingSource.DataMember = "tbl_nps";
+            this.tblnpsBindingSource.DataSource = this.operationsDataSet;
+            // 
+            // operationsDataSet
+            // 
+            this.operationsDataSet.DataSetName = "OperationsDataSet";
+            this.operationsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // npstableBindingSource
             // 
@@ -270,55 +324,9 @@
             // 
             this.nps_tableTableAdapter1.ClearBeforeFill = true;
             // 
-            // operationsDataSet
-            // 
-            this.operationsDataSet.DataSetName = "OperationsDataSet";
-            this.operationsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblnpsBindingSource
-            // 
-            this.tblnpsBindingSource.DataMember = "tbl_nps";
-            this.tblnpsBindingSource.DataSource = this.operationsDataSet;
-            // 
             // tbl_npsTableAdapter
             // 
             this.tbl_npsTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Ticket number";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Ticket number";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // customerDataGridViewTextBoxColumn
-            // 
-            this.customerDataGridViewTextBoxColumn.DataPropertyName = "Customer";
-            this.customerDataGridViewTextBoxColumn.HeaderText = "Customer";
-            this.customerDataGridViewTextBoxColumn.Name = "customerDataGridViewTextBoxColumn";
-            // 
-            // technologyDataGridViewTextBoxColumn
-            // 
-            this.technologyDataGridViewTextBoxColumn.DataPropertyName = "Technology";
-            this.technologyDataGridViewTextBoxColumn.HeaderText = "Technology";
-            this.technologyDataGridViewTextBoxColumn.Name = "technologyDataGridViewTextBoxColumn";
-            // 
-            // scoreDataGridViewTextBoxColumn
-            // 
-            this.scoreDataGridViewTextBoxColumn.DataPropertyName = "Score";
-            this.scoreDataGridViewTextBoxColumn.HeaderText = "Score";
-            this.scoreDataGridViewTextBoxColumn.Name = "scoreDataGridViewTextBoxColumn";
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            // 
-            // Country
-            // 
-            this.Country.DataPropertyName = "Country";
-            this.Country.HeaderText = "Country";
-            this.Country.Name = "Country";
             // 
             // Form1
             // 
@@ -346,13 +354,13 @@
             this.Text = "Net Promoter Score";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblnpsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.operationsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npstableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testsqlDataSet)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.testsqlDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.npstableBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.operationsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblnpsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,6 +398,7 @@
         private OperationsDataSetTableAdapters.tbl_npsTableAdapter tbl_npsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn technologyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn scoreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;

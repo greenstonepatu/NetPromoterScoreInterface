@@ -7,8 +7,8 @@ namespace NetPromoterScore
 {
     public partial class Form1 : Form
     {
-        
-        SqlConnection con = new SqlConnection("Data Source=DE001V057;Initial Catalog=Operations;User ID=nps;Password=Damovo123");
+
+        SqlConnection con = new SqlConnection("Data Source=DE001V057;Initial Catalog=Operations;Integrated Security=true;");
         SqlCommand cmd;
         SqlDataAdapter adapt;
         public Form1()
@@ -24,8 +24,9 @@ namespace NetPromoterScore
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'operationsDataSet.tbl_nps' table. You can move, or remove it, as needed.
-            this.tbl_npsTableAdapter.Fill(this.operationsDataSet.tbl_nps);
+            //this.tbl_npsTableAdapter.Fill(this.operationsDataSet.tbl_nps);
             // TODO: This line of code loads data into the 'testsqlDataSet1.nps_table' table. You can move, or remove it, as needed.
+            DisplayData();
 
         }
 
@@ -34,7 +35,7 @@ namespace NetPromoterScore
 
             if (txt_Ticket_number.Text != "" && txt_Ticket_number.Text != "")
             {
-                cmd = new SqlCommand("insert into tbl_nps([Ticket number], Customer, [Date of call], Technology, Score, Comment, Country) values(@ticket, @customer, @date, @technology, @score, @comment, @country)", con);
+                cmd = new SqlCommand("insert into tbl_nps([Ticket number], Customer, [Date of call], Technology, Score, Comment, Country, Username) values(@ticket, @customer, @date, @technology, @score, @comment, @country, SYSTEM_USER)", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@ticket", txt_Ticket_number.Text);
                 cmd.Parameters.AddWithValue("@customer", txt_Customer.Text);
@@ -61,7 +62,7 @@ namespace NetPromoterScore
         {
             con.Open();
             DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("select * from tbl_nps", con);
+            adapt = new SqlDataAdapter("select * from tbl_nps where username = SYSTEM_USER", con);
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close();
